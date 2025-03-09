@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Tugas</string>
+    <string name="register_text">Don\'t Have an Account? <font color='#0000FF'><big><b>REGISTER</b></big></font></string>
+    <string name="login_text">Already Have an Account? <font color='#0000FF'><big><b>LOGIN</b></big></font></string>
+
+
+</resources>
