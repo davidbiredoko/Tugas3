@@ -14,7 +14,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="172dp"
         android:fontFamily="times new roman"
         android:text="FORGOT PASSWORD? 😞"
         android:textColor="@color/white"
@@ -28,7 +28,7 @@
         android:id="@+id/editTextTextEmailAddress"
         android:layout_width="450sp"
         android:layout_height="60sp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="20dp"
         android:background="@color/material_dynamic_neutral40"
         android:ems="10"
         android:fontFamily="times new roman"
@@ -39,124 +39,48 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="150dp"
+        android:layout_width="230dp"
         android:layout_height="55dp"
-        android:layout_marginTop="135dp"
+        android:layout_marginTop="160dp"
         android:backgroundTint="@color/material_dynamic_neutral30"
         android:fontFamily="times new roman"
-        android:text="VERIFY"
+        android:text="Send To Email"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="450dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4">
-
-        <EditText
-            android:id="@+id/otp1"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@color/material_dynamic_neutral40"
-            android:focusableInTouchMode="true"
-            android:gravity="center"
-            android:inputType="number"
-            android:maxLength="1"
-            android:textSize="20sp"
-            android:hint="0"/>
-
-        <EditText
-            android:id="@+id/otp2"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="10dp"
-            android:background="@color/material_dynamic_neutral40"
-            android:focusableInTouchMode="true"
-            android:gravity="center"
-            android:inputType="number"
-            android:maxLength="1"
-            android:textSize="20sp"
-            android:hint="0"/>
-
-        <EditText
-            android:id="@+id/otp3"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="10dp"
-            android:background="@color/material_dynamic_neutral40"
-            android:focusableInTouchMode="true"
-            android:gravity="center"
-            android:inputType="number"
-            android:maxLength="1"
-            android:textSize="20sp"
-            android:hint="0"/>
-
-        <EditText
-            android:id="@+id/otp4"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="10dp"
-            android:background="@color/material_dynamic_neutral40"
-            android:focusableInTouchMode="true"
-            android:gravity="center"
-            android:inputType="number"
-            android:maxLength="1"
-            android:textSize="20sp"
-            android:hint="0"/>
-
-        <EditText
-            android:id="@+id/otp5"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="10dp"
-            android:background="@color/material_dynamic_neutral40"
-            android:focusableInTouchMode="true"
-            android:gravity="center"
-            android:inputType="number"
-            android:maxLength="1"
-            android:textSize="20sp"
-            android:hint="0"/>
-
-        <EditText
-            android:id="@+id/otp6"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="10dp"
-            android:background="@color/material_dynamic_neutral40"
-            android:focusableInTouchMode="true"
-            android:gravity="center"
-            android:inputType="number"
-            android:maxLength="1"
-            android:textSize="20sp"
-            android:hint="0"/>
-    </LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="Enter Your Verification Code"
+        android:layout_marginTop="180dp"
+        android:text="Enter Your Email Address"
         android:textColor="@color/white"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:text="🔙"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.029"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.201" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
