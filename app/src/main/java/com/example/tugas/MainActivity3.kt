@@ -6,9 +6,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.tugas.databinding.ActivityMain2Binding
 import com.example.tugas.databinding.ActivityMain3Binding
-import com.example.tugas.databinding.ActivityMainBinding
+
 
 class MainActivity3 : AppCompatActivity() {
     private lateinit var binding: ActivityMain3Binding
