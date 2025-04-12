@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class MyAdapter (private val nameList: ArrayList<ItemData>) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
+    var onItemClick: ((ItemData) -> Unit)? = null
     class MyViewHolder (itemData: View) : RecyclerView.ViewHolder (itemData) {
         val img :ImageView = itemData.findViewById(R.id.imageView5)
         val name : TextView = itemData.findViewById(R.id.textView6)
@@ -26,6 +27,9 @@ class MyAdapter (private val nameList: ArrayList<ItemData>) : RecyclerView.Adapt
         holder.name.text = item.name
         holder.color.text = item.color
         holder.img.setImageResource(item.img)
-    }
 
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(item)
+        }
+    }
 }
