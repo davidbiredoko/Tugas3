@@ -3,14 +3,19 @@ package com.example.tugas
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.tugas.databinding.ActivityRecyclerBinding
 
 class RecyclerActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityRecyclerBinding
+
     private lateinit var mobilRecyclerView: RecyclerView
     private lateinit var mobilAdapter: MyAdapter
     private lateinit var listMobil : ArrayList<ItemData>
@@ -25,6 +30,15 @@ class RecyclerActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        binding = ActivityRecyclerBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        binding.toolbar.overflowIcon?.setTint(getColor(R.color.white))
+        binding.toolbar.navigationIcon?.setTint(getColor(R.color.white))
 
         mobilRecyclerView = findViewById(R.id.mobilRV)
         listMobil = ArrayList()
@@ -50,5 +64,31 @@ class RecyclerActivity : AppCompatActivity() {
             intent.putExtra("item", selectedItem)
             startActivity(intent)
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId){
+
+            R.id.item->{
+                startActivity(Intent(this,ProfileActivity::class.java))
+                return true
+            }
+
+            R.id.item2->{
+                startActivity(Intent(this,MainActivity::class.java))
+                return true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressedDispatcher.onBackPressed()
+        return true
     }
 }

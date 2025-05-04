@@ -8,23 +8,23 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.tugas.databinding.ActivityPageBinding
+import com.example.tugas.databinding.ActivityProfileBinding
 
-class PageActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityPageBinding
+class ProfileActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityProfileBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_page)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+
+        binding = ActivityProfileBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        binding = ActivityPageBinding.inflate(layoutInflater)
-        setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -32,33 +32,27 @@ class PageActivity : AppCompatActivity() {
         binding.toolbar.overflowIcon?.setTint(getColor(R.color.white))
         binding.toolbar.navigationIcon?.setTint(getColor(R.color.white))
 
-        binding.button2.setOnClickListener{
-            startActivity(Intent(this, HomeActivity::class.java))
-        }
-
-        binding.button4.setOnClickListener{
-            startActivity(Intent(this, RecyclerActivity::class.java))
+        binding.button5.setOnClickListener {
+            startActivity(Intent(this, PageActivity::class.java))
         }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu, menu)
+        menuInflater.inflate(R.menu.menu_2, menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId){
-
-            R.id.item->{
-                startActivity(Intent(this,ProfileActivity::class.java))
-                return true
+        return when (item.itemId) {
+            R.id.item -> {
+                startActivity(Intent(this, MenuActivity::class.java))
+                true
             }
 
-            R.id.item2->{
-                startActivity(Intent(this,MainActivity::class.java))
-                return true
+            R.id.item2 -> {
+                startActivity(Intent(this, MainActivity::class.java))
+                true
             }
-
             else -> super.onOptionsItemSelected(item)
         }
     }
