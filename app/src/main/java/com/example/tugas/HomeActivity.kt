@@ -67,7 +67,7 @@ class HomeActivity : AppCompatActivity() {
             }
 
             R.id.item2->{
-                startActivity(Intent(this,MainActivity::class.java))
+                startActivity(Intent(this, MainActivity::class.java))
                 return true
             }
             else -> super.onOptionsItemSelected(item)

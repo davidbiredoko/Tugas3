@@ -12,9 +12,11 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tugas.databinding.ActivityRecyclerBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class RecyclerActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRecyclerBinding
+    private lateinit var firebaseAuth: FirebaseAuth
 
     private lateinit var mobilRecyclerView: RecyclerView
     private lateinit var mobilAdapter: MyAdapter
@@ -33,6 +35,8 @@ class RecyclerActivity : AppCompatActivity() {
 
         binding = ActivityRecyclerBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        firebaseAuth = FirebaseAuth.getInstance()
 
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -80,8 +84,13 @@ class RecyclerActivity : AppCompatActivity() {
             }
 
             R.id.item2->{
-                startActivity(Intent(this,MainActivity::class.java))
-                return true
+                FirebaseAuth.getInstance().signOut()
+
+                val intent = Intent(this, MainActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK // <-- hapus stack
+                startActivity(intent)
+                finish()
+                true
             }
             else -> super.onOptionsItemSelected(item)
         }
